@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Dates from './Dates.js';
 class Todo extends Component {
 
     state = {
@@ -10,7 +10,7 @@ class Todo extends Component {
 
         deadlines: [
             'Wed Sep 13 2017',
-            'Brush teeth, Thu Sep 14 2017',
+            'Thu Sep 14 2017',
             'Fri Sep 15 2017'
         ]
 
@@ -31,6 +31,7 @@ class Todo extends Component {
                 <ol>
                     {this.state.todos.map((todo, index) => <li key={index}>{todo}
                         <button onClick={this.deleteTodo.bind(this, index)}> Done</button>
+                        <Dates date= {this.state.deadlines[index]}/>
                     </li>)}
 
                 </ol>
