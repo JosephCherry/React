@@ -31,17 +31,19 @@ constructor(props){
 
       markAsDone(id){
           let updatedTodos = this.state.todos.map(todo => {
-              if (todo.id === id)
-                return Object.assign({}, todo, {done:true})
-                return todo
+              if (todo.id === id){
+                  todo.done = !todo.done
+              }
+                
+                return true;
           });
 
         
         
 
 
-          this.setState({
-            todos: updatedTodos
+          this.setState(() =>{
+            return updatedTodos
           });
         }
     
